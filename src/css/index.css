@@ -1,0 +1,211 @@
+@import "./Navbar.css";
+
+/* =======================================
+   TIPOGRAFÍA GLOBAL RENACE PADEL CLUB
+   ======================================= */
+
+body {
+  font-family: "Futura PT", "Segoe UI", "Roboto", sans-serif;
+  background-color: #f9f9f9;
+  color: #111;
+}
+
+/* TÍTULOS PRINCIPALES (usados en secciones como "Nuestros productos") */
+h1,
+h2,
+.seccion-titulo {
+  font-family: "Futura PT", "Segoe UI", "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+/* SUBTÍTULOS o textos debajo del título */
+.seccion-subtitulo {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  color: #555;
+  margin-bottom: 2.5rem;
+}
+
+/* =======================================
+   SECCIÓN DE PRODUCTOS - VISUAL
+   ======================================= */
+.seccion-productos {
+  background-color: #f9f9f9;
+  padding: 4rem 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+/* Contenedor centrado */
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Título y subtítulo */
+.seccion-titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.seccion-subtitulo {
+  font-size: 1rem;
+  text-align: center;
+  color: #666;
+  margin-bottom: 2.5rem;
+}
+
+/* Botón Ver Más */
+.ver-mas {
+  margin: 3rem auto 0;
+  display: block;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff6f3c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ver-mas:hover {
+  background-color: #e85c2e;
+}
+
+/* =======================================
+   PRODUCTOS - GRILLA GENERAL
+   ======================================= */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0rem;
+  justify-items: center;
+  margin: 3rem auto;
+  max-width: 820px;
+  padding: 0 1rem;
+}
+
+/* =======================================
+   PRODUCTO - TARJETA
+   ======================================= */
+.product-card {
+  width: 100%;
+  max-width: 230px;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: "Arial", sans-serif;
+  transition: box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* =======================================
+   PRODUCTO - IMAGEN
+   ======================================= */
+.product-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: #f9f9f9;
+  padding: 0rem;
+  margin-bottom: 0.5rem;
+}
+
+/* =======================================
+   PRODUCTO - CONTENIDO COMPACTO
+   ======================================= */
+.product-info {
+  height: 200px;
+  padding: 0 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-grow: 1;
+}
+
+/* Marca */
+.marca {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #888;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Nombre */
+.nombre {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.3;
+  margin: 0;
+  min-height: 2.3rem;
+  overflow: hidden;
+}
+
+/* Precio anterior */
+.precio-anterior {
+  font-size: 0.7rem;
+  color: #999;
+  text-decoration: line-through;
+  margin: 0;
+}
+
+/* Precio actual */
+.precio-actual {
+  font-size: 1.1rem;
+  color: #111;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+/* Descuento */
+.descuento {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #00a650;
+}
+
+/* Cuotas */
+.cuotas {
+  font-size: 0.7rem;
+  color: #666;
+  margin: 0.2rem 0 0;
+}
+
+/* =======================================
+   RESPONSIVE (opcional)
+   ======================================= */
+@media screen and (max-width: 1024px) {
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .productos-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .product-img {
+    height: 180px;
+  }
+
+  .product-card {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,63 @@
+/* navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  font-family: "Futura PT", sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 40px;
+}
+
+.navbar h1 {
+  font-size: 1.4rem;
+  color: #2d2e32;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #2d2e32;
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: #ff6f3c;
+}
+
+.navbar-links .active {
+  color: #ff6f3c;
+  border-bottom: 2px solid #ff6f3c;
+}
+
+.navbar-cart {
+  font-size: 1.2rem;
+}
+
+.fa-shopping-cart {
+  color: #2d2e32;
+  margin-right: 10px;
+}
