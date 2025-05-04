@@ -1,7 +1,7 @@
 import ItemListContainer from "../components/ItemListContainer";
 
 function Home() {
-  return <ItemListContainer greeting="¡Bienvenido a Renace Padel Club!" />;
+  return <ItemListContainer />;
 }
 
 export default Home;

@@ -9,7 +9,6 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-left">
         <img src={logo} alt="Renace Padel Club" className="logo" />
-        <h1>Tienda Online</h1>
       </div>
 
       <ul className="navbar-links">
@@ -18,7 +17,7 @@ function Navbar() {
             <NavLink to="/">Inicio</NavLink>
           </li>
           <li>
-            <NavLink to="/productos">Productos</NavLink>
+            <NavLink to={"/category/all"}>Productos</NavLink>
           </li>
           <li>
             <NavLink to="/nosotros">Nosotros</NavLink>

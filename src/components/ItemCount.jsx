@@ -1,23 +1,22 @@
 import { useState } from "react";
 
-function ItemCount() {
-  const [contador, setContador] = useState(0);
-  const color = "red";
+function ItemCount({ initial = 1, stock = 10 }) {
+  const [count, setCount] = useState(initial);
 
-  function sumar() {
-    setContador(contador + 1);
-  }
+  const sumar = () => {
+    if (count < stock) setCount(count + 1);
+  };
 
-  function restar() {
-    setContador(contador - 1);
-  }
+  const restar = () => {
+    if (count > 1) setCount(count - 1);
+  };
 
   return (
-    <>
+    <div className="item-count">
       <button onClick={restar}>-</button>
-      <h1 style={{ color: color }}>{contador}</h1>
+      <span>{count}</span>
       <button onClick={sumar}>+</button>
-    </>
+    </div>
   );
 }
 
