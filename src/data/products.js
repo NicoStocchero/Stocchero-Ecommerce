@@ -18,7 +18,7 @@ import viseraUV from "../assets/productos/visera-uv.png";
 import overgripPack from "../assets/productos/overgrip-pack.png";
 import mediasRenace from "../assets/productos/medias-renace.png";
 
-const products = [
+export const products = [
   {
     id: "1",
     title: "Paleta Pro Naranja Carbono",
