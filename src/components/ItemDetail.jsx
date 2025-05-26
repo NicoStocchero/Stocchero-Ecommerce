@@ -38,7 +38,13 @@ const ItemDetail = ({ product }) => {
             {cuotas && <p className="cuotas">{cuotas}</p>}
           </div>
 
-          <ItemCount />
+          {product.stock > 0 ? (
+            <ItemCount product={product} />
+          ) : (
+            <p>Sin stock</p>
+          )}
+
+          <p>Stock disponible: {product.stock}</p>
 
           <button className="btn-agregar" disabled>
             Agregar al carrito (no funcional)
