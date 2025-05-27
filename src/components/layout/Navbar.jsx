@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
-import CartWidget from "./CartWidget";
-import logo from "../assets/logo-renace.png";
+import CartWidget from "../CartWidget";
+import logo from "../../assets/logo-renace.png";
 
 function Navbar() {
   return (
@@ -25,12 +25,14 @@ function Navbar() {
           <li>
             <NavLink to="/contacto">Contacto</NavLink>
           </li>
+          <li>
+            <NavLink to="/cart" className={"navbar-cart"}>
+              <CartWidget />
+              Carrito
+            </NavLink>
+          </li>
         </ul>
       </ul>
-
-      <div className="navbar-cart">
-        <CartWidget />
-      </div>
     </nav>
   );
 }
