@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
-function ItemCount({ initial = 1, stock = 10 }) {
+function ItemCount({ initial = 1, stock = 10, product }) {
+  const { addItem } = useContext(CartContext); // Importa el contexto del carrito
   const [count, setCount] = useState(initial);
 
   const sumar = () => {
@@ -16,6 +18,9 @@ function ItemCount({ initial = 1, stock = 10 }) {
       <button onClick={restar}>-</button>
       <span>{count}</span>
       <button onClick={sumar}>+</button>
+      <button className="btn-carrito" onClick={() => addItem(product, count)}>
+        Agregar al Carrito
+      </button>
     </div>
   );
 }
