@@ -45,10 +45,6 @@ const ItemDetail = ({ product }) => {
           )}
 
           <p>Stock disponible: {product.stock}</p>
-
-          <button className="btn-agregar" disabled>
-            Agregar al carrito (no funcional)
-          </button>
         </div>
       </div>
     </section>
