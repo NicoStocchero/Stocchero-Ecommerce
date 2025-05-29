@@ -6,6 +6,12 @@ Este proyecto refleja buenas prácticas de desarrollo, una estructura modular y 
 
 ---
 
+## 🌐 Demo en línea
+
+Accede al proyecto en Vercel: [renace-ecommerce.vercel.app](https://renace-ecommerce.vercel.app)
+
+---
+
 ## 🚀 Funcionalidades principales
 
 ✅ Listado de productos con filtro por categorías  
