@@ -1,10 +1,18 @@
 // import { uploadProducts } from "../utils/uploadProducts.js";
-// import { useEffect } from "react";
 
 // export const SeedProducts = () => {
-//   useEffect(() => {
+//   const handleUpload = () => {
 //     uploadProducts();
-//   }, []);
+//   };
 
-//   return <div>Subiendo productos... Revisa la consola</div>;
+//   return (
+//     <div className="p-4">
+//       <button
+//         onClick={handleUpload}
+//         className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+//       >
+//         Subir Productos a Firebase
+//       </button>
+//     </div>
+//   );
 // };
