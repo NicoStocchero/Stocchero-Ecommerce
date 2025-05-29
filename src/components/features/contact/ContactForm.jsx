@@ -8,7 +8,7 @@ import { fieldVariant } from "@/animations/formVariants"; // Variantes para anim
 
 // Componentes UI
 import { Input } from "@/components/ui/input"; // Componente input reutilizable
-import { Textarea } from "@/components/ui/Textarea"; // Componente textarea reutilizable
+import { Textarea } from "@/components/ui/textarea"; // Componente textarea reutilizable
 import { Send } from "lucide-react"; // Icono de enviar (Lucide)
 import { Button } from "@/components/ui/button"; // Componente botón reutilizable
 
