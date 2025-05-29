@@ -1,7 +1,6 @@
 // ItemCount.jsx - Contador de unidades para agregar al carrito
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { useCart } from "@/hooks/useCart";
 
 const ItemCount = ({ initial = 1, stock, product }) => {

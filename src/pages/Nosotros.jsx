@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 // Componentes internos
 import AnimatedSection from "@/animations/AnimatedSection";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import Hito from "@/components/features/about/Hito";
 import MisionCard from "@/components/features/about/MisionCard";
 import ValorItem from "@/components/features/about/ValorItem";
