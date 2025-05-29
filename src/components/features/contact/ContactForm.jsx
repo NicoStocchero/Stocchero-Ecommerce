@@ -7,7 +7,7 @@ import { motion } from "framer-motion"; // Animaciones con Framer Motion
 import { fieldVariant } from "@/animations/formVariants"; // Variantes para animar los campos
 
 // Componentes UI
-import { Input } from "@/components/ui/Input"; // Componente input reutilizable
+import { Input } from "@/components/ui/input"; // Componente input reutilizable
 import { Textarea } from "@/components/ui/Textarea"; // Componente textarea reutilizable
 import { Send } from "lucide-react"; // Icono de enviar (Lucide)
 import { Button } from "@/components/ui/button"; // Componente botón reutilizable
