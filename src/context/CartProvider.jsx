@@ -1,23 +1,41 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CartContext } from "./CartContext";
+
+import { toast } from "react-toastify";
 
 // CartContext: Provee el estado global del carrito de compras y las funciones para gestionarlo
 // Expuesto a través del Context API de React para ser usado en toda la aplicación
 
 export const CartProvider = ({ children }) => {
   // Estado del carrito: array de objetos con { product, quantity }
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    try {
+      const data = localStorage.getItem("cart");
+      return data ? JSON.parse(data) : [];
+    } catch {
+      // Si ocurre un error (ej: datos corruptos), ignoramos y devolvemos carrito vacío
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   // addItem: agrega un producto al carrito o actualiza la cantidad si ya existe
   const addItem = (item, quantity) => {
-    if (typeof item.precio !== "number" || isNaN(item.precio)) {
-      return [];
-    }
-
     if (!quantity || quantity < 1) {
       // Evita agregar cantidades inválidas
       return;
     }
+
+    const avaliable = getStockAvailable(item.id, item.stock);
+
+    if (avaliable < quantity) {
+      toast.error(`No hay suficiente stock para ${item.title}`);
+      return;
+    }
+
     if (isInCart(item.id)) {
       // Si el producto ya está en el carrito, suma la nueva cantidad
       setCart((prevCart) =>
@@ -33,6 +51,20 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  // decreaseItemQuantity: disminuye la cantidad de un producto en el carrito
+  const decreaseItemQuantity = (itemId) => {
+    setCart(
+      (prevCart) =>
+        prevCart
+          .map((item) =>
+            item.product.id === itemId
+              ? { ...item, quantity: item.quantity - 1 }
+              : item
+          )
+          .filter((item) => item.quantity > 0) // Eliminar si queda 0
+    );
+  };
+
   // removeItem: elimina un producto del carrito por su id
   const removeItem = (itemId) => {
     setCart((prevCart) =>
@@ -41,7 +73,7 @@ export const CartProvider = ({ children }) => {
   };
 
   // clear: vacía todo el carrito
-  const clear = () => {
+  const clearCart = () => {
     setCart([]);
   };
 
@@ -81,19 +113,28 @@ export const CartProvider = ({ children }) => {
     return formatearImporte(subtotal);
   };
 
+  const getStockAvailable = (productId, stock) => {
+    const inCart =
+      cart.find((item) => item.product.id === productId)?.quantity ?? 0;
+    return stock - inCart;
+  };
+
   // Exponemos todas las funciones útiles para el carrito
   return (
     <CartContext.Provider
       value={{
         cart,
         addItem,
+        decreaseItemQuantity,
         removeItem,
-        clear,
+        clearCart,
         isInCart,
         totalPrice, // Total del carrito formateado
+        totalPriceValue, // Total del carrito en número crudo
         totalProducts, // Cantidad total de productos
         formatearImporte, // Formateo de precios
         getItemTotal, // Total por producto (precio * cantidad, formateado)
+        getStockAvailable, // Stock disponible para un producto
       }}
     >
       {children}
