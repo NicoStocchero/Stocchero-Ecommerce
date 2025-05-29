@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { useCart } from "@/hooks/useCart";
 
+import { Button } from "@/components/ui/button";
+
 const ItemCount = ({ initial = 1, stock, product }) => {
   const { addItem } = useCart();
   const [count, setCount] = useState(initial);
