@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import ScrollToTop from "./components/layout/SrollToTop";
 
 import Home from "./pages/Home";
 import Productos from "./pages/Productos";
@@ -31,6 +32,7 @@ function App() {
           <MiniCart />
 
           <main className="flex-grow pt-18">
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/category/:categoryId" element={<Productos />} />
