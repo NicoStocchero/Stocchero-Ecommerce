@@ -15,6 +15,7 @@ const FormInput = ({ label, id, value, onChange, error, type = "text" }) => {
       <input
         type={type}
         id={id}
+        name={id}
         placeholder={label}
         value={value}
         onChange={onChange}
