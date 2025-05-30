@@ -1,11 +1,14 @@
 // CartSummary.jsx - Muestra el resumen de la compra: productos, cantidades, subtotales y total final
 
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "@/context/CartContext";
+import CartItemList from "./CartItemList";
+import CheckoutItem from "./CheckoutItem";
 
 const CartSummary = () => {
   // Accedemos al contexto del carrito para obtener los productos, el total y la función para formatear importes
-  const { cart, totalPrice, formatearImporte } = useContext(CartContext);
+  const { cart, totalPrice } = useContext(CartContext);
 
   // Si el carrito está vacío, no renderizamos el resumen (early return)
   if (cart.length === 0) return null;
@@ -14,39 +17,38 @@ const CartSummary = () => {
   return (
     <div>
       {/* Título de la sección */}
-      <h3 className="text-2xl font-bold text-neutral-900 mb-8">
+      <h3 className="text-2xl font-bold text-neutral-900 justify-self-center-safe mb-8">
         Resumen de tu compra
       </h3>
 
       {/* Lista de productos en el carrito */}
-      <ul className="divide-y divide-neutral-200">
-        {cart.map((item) => (
-          <li key={item.product.id} className="flex items-center gap-4 py-3">
-            {/* Imagen del producto */}
-            <img
-              src={item.product.imagen}
-              alt={item.product.title}
-              className="w-16 h-16 object-cover rounded-md border border-neutral-200"
-            />
-
-            {/* Detalles del producto: nombre, cantidad y subtotal */}
-            <div className="flex-1">
-              <p className="text-base font-semibold text-neutral-900">
-                {item.product.title}
-              </p>
-              <p className="text-sm text-neutral-600">
-                x{item.quantity} –{" "}
-                {formatearImporte(item.product.precio * item.quantity)}
-              </p>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <CartItemList cart={cart} ItemComponent={CheckoutItem} />
 
       {/* Total de la compra */}
-      <p className="text-2xl font-bold text-neutral-900 mt-6">
-        Total: {totalPrice()}
-      </p>
+      <div className="border-t pt-6 mt-6 space-y-2">
+        <div className="flex justify-between items-center text-sm">
+          <p className="text-neutral-600">Subtotal</p>
+          {/* <p className="text-neutral-900 font-medium">{}</p> */}
+        </div>
+        <div className="flex justify-between items-center text-sm">
+          <p className="text-neutral-600">Gastos de envío</p>
+          {/* <p className="text-neutral-900 font-medium">{}</p> */}
+        </div>
+        <div className="flex justify-between items-center text-sm">
+          <p className="text-neutral-600">Impuestos nacionales</p>
+          {/* <p className="text-neutral-900 font-medium">{}</p> */}
+        </div>
+        <div className="flex justify-between items-center text-lg font-bold border-t pt-4 mt-4">
+          <p className="text-neutral-900">Total</p>
+          <p className="text-neutral-900">{totalPrice()}</p>
+        </div>
+        <Link
+          to="/cart"
+          className="text-xs font-bold text-gray-600 hover:text-black cursor-pointer mt-8 block text-center"
+        >
+          Volver a carrito
+        </Link>
+      </div>
     </div>
   );
 };

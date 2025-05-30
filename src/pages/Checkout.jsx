@@ -75,7 +75,7 @@ const Checkout = () => {
 
   // Render del formulario de checkout y resumen de compra
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-32">
       {/* Formulario de datos del comprador */}
       <div>
         <h2 className="text-3xl font-bold text-neutral-900 mb-8">

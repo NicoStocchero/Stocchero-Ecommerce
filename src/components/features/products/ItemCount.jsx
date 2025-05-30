@@ -3,11 +3,14 @@
 import { useState, useEffect } from "react";
 import { useCart } from "@/hooks/useCart";
 
+import { useMiniCart } from "@/hooks/useMiniCart";
+
 import { Button } from "@/components/ui/button";
 
 const ItemCount = ({ initial = 1, stock, product }) => {
   const { addItem } = useCart();
   const [count, setCount] = useState(initial);
+  const { openMiniCart } = useMiniCart();
 
   // Resetear count si el stock cambia
   useEffect(() => {
@@ -30,10 +33,10 @@ const ItemCount = ({ initial = 1, stock, product }) => {
   const handleAddToCart = () => {
     if (count <= stock && stock > 0) {
       addItem(product, count);
+      openMiniCart();
       setCount(initial);
     }
   };
-
   return (
     <div className="flex flex-col items-center gap-4">
       {/* Controles + / - */}
