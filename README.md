@@ -30,24 +30,27 @@ Accede al proyecto en Vercel: [renace-ecommerce.vercel.app](https://renace-ecomm
 
 El proyecto está estructurado siguiendo principios de **Clean Code** y separación de responsabilidades. La estructura de carpetas facilita la escalabilidad y el mantenimiento:
 
-/src
-/assets
-/components
-/features
-/about
-/contact
-/hero
-/products
-/cart
-/layout
-/ui
-/context (manejo de estados globales)
-/data (mock o datos semilla)
-/hooks (custom hooks)
-/lib (helpers y utilidades)
-/pages (páginas principales)
-/services (lógica de integración externa, como Firebase)
-/utils (funciones generales)
+
+```plaintext
+src/
+  assets/         # Recursos estáticos como imágenes, íconos, fuentes
+  components/     # Componentes reutilizables
+  features/       # Funcionalidades agrupadas por dominio
+    about/
+    contact/
+    hero/
+    products/
+    cart/
+  layout/         # Estructura general de la app (headers, footers, etc.)
+  ui/             # Componentes UI genéricos (botones, inputs)
+  context/        # Manejo de estados globales (context API)
+  data/           # Datos mock o semillas para testing
+  hooks/          # Custom hooks
+  lib/            # Helpers y utilidades varias
+  pages/          # Páginas principales
+  services/       # Lógica de integración externa (Firebase, APIs)
+  utils/          # Funciones generales
+```
 
 ---
 
