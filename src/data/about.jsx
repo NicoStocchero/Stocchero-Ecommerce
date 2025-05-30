@@ -12,27 +12,18 @@ import {
 export const heroText = {
   title: "Sobre Nosotros",
   description: `
-    En Renace Padel Club, no somos solo una tienda: somos una comunidad apasionada por el pádel. 
-    Nos impulsa un propósito claro: ofrecer productos de alta calidad, asesoramiento experto y 
-    una experiencia única que inspire a cada jugador a dar lo mejor de sí dentro y fuera de la cancha.
-  `,
+    En Renace Padel Club, no somos solo una tienda: somos una comunidad apasionada por el pádel. Nos impulsa un propósito claro: ofrecer productos de alta calidad, asesoramiento experto y una experiencia única que inspire a cada jugador a dar lo mejor de sí dentro y fuera de la cancha.
+  `.trim(),
 };
 
 // Historia: párrafo largo con el storytelling del club
 export const historiaText = `
-  Renace Padel Club nació en 2025, cuando un grupo de hermanos, unidos por una pasión inquebrantable
-  por el pádel, decidió transformar un sueño en realidad: crear un espacio único donde los jugadores
-  pudieran sentirse parte de una comunidad.
+  Renace Padel Club nació en 2025, cuando un grupo de hermanos, unidos por una pasión inquebrantable por el pádel, decidió transformar un sueño en realidad: crear un espacio único donde los jugadorespudieran sentirse parte de una comunidad.
 
-  Lo que comenzó como una idea entre amigos pronto se convirtió en un punto de encuentro para cientos 
-  de jugadores, desde principiantes hasta profesionales. En cada producto, en cada clínica, en cada 
-  conversación, llevamos la esencia de nuestra misión: ayudarte a superar tus límites y disfrutar al 
-  máximo del pádel.
+  Lo que comenzó como una idea entre amigos pronto se convirtió en un punto de encuentro para cientos de jugadores, desde principiantes hasta profesionales. En cada producto, en cada clínica, en cada conversación, llevamos la esencia de nuestra misión: ayudarte a superar tus límites y disfrutar al máximo del pádel.
 
-  Más que una tienda, somos un equipo que crece junto a vos, celebra tus logros y te impulsa a ir 
-  siempre un paso más allá. Esto es Renace Padel Club: pasión, comunidad y compromiso con el deporte 
-  que nos une.
-`;
+  Más que una tienda, somos un equipo que crece junto a vos, celebra tus logros y te impulsa a ir siempre un paso más allá. Esto es Renace Padel Club: pasión, comunidad y compromiso con el deporte que nos une.
+`.trim();
 
 // Misión: tarjetas con icono, título y texto
 export const misionData = [

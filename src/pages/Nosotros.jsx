@@ -33,7 +33,7 @@ const Nosotros = () => {
         <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4 leading-tight tracking-tight">
           {heroText.title}
         </h1>
-        <p className="text-neutral-700 text-lg leading-relaxed max-w-2xl mx-auto">
+        <p className="text-neutral-700 text-lg leading-relaxed max-w-4xl mx-auto text-justify">
           {heroText.description}
         </p>
       </AnimatedSection>
@@ -42,12 +42,12 @@ const Nosotros = () => {
       <AnimatedSection
         onScroll={false}
         custom={1}
-        className="mb-12 max-w-3xl mx-auto"
+        className="mb-12 max-w-4xl mx-auto"
       >
         <h2 className="text-2xl font-bold text-neutral-900 mb-4">
           Nuestra Historia
         </h2>
-        <p className="text-neutral-700 text-lg leading-relaxed whitespace-pre-line">
+        <p className="text-neutral-700 text-lg leading-relaxed whitespace-pre-line text-justify">
           {historiaText}
         </p>
       </AnimatedSection>
