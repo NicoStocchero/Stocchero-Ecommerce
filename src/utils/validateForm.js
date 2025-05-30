@@ -6,17 +6,17 @@ export const validateForm = ({ name, email, phone }) => {
 
   // Validación del campo nombre
   if (name.trim() === "") {
-    errors.name("Por favor, ingresá tu nombre.");
+    errors.name = "Por favor, ingresá tu nombre.";
   }
 
   // Validación del email con la librería validator
   if (!isEmail(email)) {
-    errors.email("Por favor, ingresá un email válido.");
+    errors.email = "Por favor, ingresá un email válido.";
   }
 
   // Validación del teléfono (cualquier formato válido para mobiles)
   if (!isMobilePhone(phone)) {
-    errors.phone("Por favor, ingresá un número de teléfono válido.");
+    errors.phone = "Por favor, ingresá un número de teléfono válido.";
   }
 
   return {

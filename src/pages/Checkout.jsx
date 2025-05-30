@@ -40,7 +40,7 @@ const Checkout = () => {
     // Validamos el formulario antes de continuar
     const { isValid, errors: validationErrors } = validateForm(formData);
 
-    if (!isValid()) {
+    if (!isValid) {
       // Si hay errores, los seteamos en el hook de errores
       setErrors(validationErrors);
       toast.error("Por favor, completá todos los campos correctamente.");
