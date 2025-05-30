@@ -51,8 +51,19 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // decreaseItemQuantity: disminuye la cantidad de un producto en el carrito
+  // decreaseItemQuantity: disminuye la cantidad de un producto en el carrito sin eliminarlo
   const decreaseItemQuantity = (itemId) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.product.id === itemId && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
+  };
+
+  // decreaseItemQuantityDeleting: disminuye la cantidad de un producto en el carrito y elimina si queda 0
+  const decreaseItemQuantityDeleting = (itemId) => {
     setCart(
       (prevCart) =>
         prevCart
@@ -87,7 +98,7 @@ export const CartProvider = ({ children }) => {
     return new Intl.NumberFormat("es-AR", {
       style: "currency",
       currency: "ARS",
-      minimumFractionDigits: 2,
+      minimumFractionDigits: 0,
     }).format(numero);
   };
 
@@ -126,6 +137,7 @@ export const CartProvider = ({ children }) => {
         cart,
         addItem,
         decreaseItemQuantity,
+        decreaseItemQuantityDeleting,
         removeItem,
         clearCart,
         isInCart,

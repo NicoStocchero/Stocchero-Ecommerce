@@ -1,24 +1,38 @@
 import { useCart } from "@/hooks/useCart";
 import { FiTrash2 } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import { useMiniCart } from "@/hooks/useMiniCart";
 
 const MiniCartItem = ({ item }) => {
+  const navigate = useNavigate();
   const { addItem, decreaseItemQuantity, removeItem, getItemTotal } = useCart();
+  const { closeMiniCart } = useMiniCart();
 
   return (
     <div className="flex items-start justify-between gap-4 py-4 border-b">
       {/* Imagen */}
       <img
+        onClick={() => {
+          navigate(`/item/${item.product.id}`);
+          closeMiniCart();
+        }}
         src={item.product.imagen}
         alt={item.product.title}
-        className="w-16 h-16 object-cover rounded-md border"
+        className="w-16 h-16 object-cover rounded-md border cursor-pointer"
       />
 
       {/* Info + botones */}
       <div className="flex-1 flex flex-col justify-between space-y-2">
-        <p className="text-sm font-medium">{item.product.title}</p>
+        <p
+          onClick={() => navigate(`/item/${item.product.id}`)}
+          className="text-sm font-medium cursor-pointer"
+        >
+          {item.product.title}
+        </p>
         <div className="flex items-center gap-2 mt-1">
           <button
             onClick={() => decreaseItemQuantity(item.product.id)}
+            disabled={item.quantity === 1}
             className="w-8 h-8 border rounded-md text-base hover:bg-neutral-100 cursor-pointer"
           >
             -

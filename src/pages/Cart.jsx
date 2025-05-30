@@ -14,7 +14,7 @@ import CartTotal from "@/components/cart/CartTotal"; // Resumen de la compra
 
 export const Cart = () => {
   // Obtenemos el carrito y funciones relacionadas desde el contexto global
-  const { cart, clearCart, totalPrice } = useCart();
+  const { cart, totalPrice } = useCart();
 
   // Si el carrito está vacío, mostramos un mensaje y un botón para ver productos
   if (cart.length === 0) {
@@ -51,14 +51,16 @@ export const Cart = () => {
 
       <div className="mt-12 flex flex-col gap-4 items-center">
         <div className="flex flex-col gap-4 w-full max-w-xs">
-          <Button variant="outline" onClick={clearCart} className="w-full">
-            Vaciar Carrito
-          </Button>
-
           <Link to="/checkout" className="w-full">
             <Button size="lg" className="w-full">
               Finalizar compra
             </Button>
+          </Link>
+          <Link
+            to="/"
+            className="text-xs font-bold text-gray-600 hover:text-black cursor-pointer block text-center"
+          >
+            Seguir comprando
           </Link>
         </div>
       </div>
