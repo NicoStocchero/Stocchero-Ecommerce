@@ -53,7 +53,7 @@ const Nosotros = () => {
       </AnimatedSection>
 
       {/* Misión & Visión: tarjetas con iconos y textos cortos */}
-      <div className="mb-16 grid gap-6 md:grid-cols-2">
+      <div className="mb-16 grid gap-6 md:grid-cols-2 text-justify">
         {misionData.map((item, idx) => (
           <MisionCard key={item.title} {...item} custom={idx + 2} />
         ))}
@@ -83,7 +83,7 @@ const Nosotros = () => {
         <h2 className="text-2xl font-bold text-neutral-900 mb-8 text-center">
           Lo que dicen nuestros jugadores
         </h2>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 text-justify">
           {testimoniosData.map((t, idx) => (
             <TestimonioCard key={idx} {...t} custom={idx + 16} />
           ))}
