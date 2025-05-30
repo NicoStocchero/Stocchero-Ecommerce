@@ -18,7 +18,7 @@ export const heroText = {
 
 // Historia: párrafo largo con el storytelling del club
 export const historiaText = `
-  Renace Padel Club nació en 2025, cuando un grupo de hermanos, unidos por una pasión inquebrantable por el pádel, decidió transformar un sueño en realidad: crear un espacio único donde los jugadorespudieran sentirse parte de una comunidad.
+  Renace Padel Club nació en 2025, cuando un grupo de hermanos, unidos por una pasión inquebrantable por el pádel, decidió transformar un sueño en realidad: crear un espacio único donde los jugadores pudieran sentirse parte de una comunidad.
 
   Lo que comenzó como una idea entre amigos pronto se convirtió en un punto de encuentro para cientos de jugadores, desde principiantes hasta profesionales. En cada producto, en cada clínica, en cada conversación, llevamos la esencia de nuestra misión: ayudarte a superar tus límites y disfrutar al máximo del pádel.
 
