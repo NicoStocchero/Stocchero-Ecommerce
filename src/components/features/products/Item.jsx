@@ -1,15 +1,21 @@
 // Item.jsx - Tarjeta de producto individual
 
 import { Link } from "react-router-dom";
+import { useCart } from "@/hooks/useCart";
 
 const Item = ({ product }) => {
-  const { id, marca, title, precio, precioAnterior, imagen, descuento } =
+  const { id, marca, title, precio, precioAnterior, imagen, descuento, stock } =
     product;
+  const { getStockAvailable } = useCart();
+
+  const stockAvailable = getStockAvailable(id, stock);
 
   return (
     <Link
       to={`/item/${id}`}
-      className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col"
+      className={`bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col ${
+        stockAvailable === 0 ? "opacity-30" : ""
+      }`}
     >
       {/* Imagen */}
       <div className="aspect-[4/3] w-full overflow-hidden rounded-t-lg">
@@ -21,17 +27,14 @@ const Item = ({ product }) => {
         <span className="text-xs font-semibold uppercase text-gray-500">
           {marca}
         </span>
-
         <p className="text-sm font-semibold text-gray-800 line-clamp-2">
           {title}
         </p>
-
         {precioAnterior && (
           <p className="text-xs text-gray-400 line-through">
             ${precioAnterior.toLocaleString()}
           </p>
         )}
-
         <div className="flex items-center gap-1">
           <span className="text-base font-bold text-gray-900">
             ${precio.toLocaleString()}
@@ -42,8 +45,17 @@ const Item = ({ product }) => {
             </span>
           )}
         </div>
-
-        <p className="text-xs font-semibold text-green-600">Envío gratis</p>
+        {stockAvailable > 0 ? (
+          <p className="text-xs font-semibold text-green-600">Envío gratis</p>
+        ) : (
+          <p
+            className="text-xs text-red-600 font-semibold"
+            role="alert"
+            aria-live="assertive"
+          >
+            Sin stock
+          </p>
+        )}
       </div>
     </Link>
   );

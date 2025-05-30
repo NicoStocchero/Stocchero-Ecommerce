@@ -64,7 +64,11 @@ const ItemDetail = ({ product }) => {
                 </span>
               )}
             </div>
-            <p className="text-sm font-bold text-green-600">Envío gratis</p>
+            {stockAvailable > 0 ? (
+              <p className="text-sm font-bold text-green-600">Envío gratis</p>
+            ) : (
+              ""
+            )}
           </div>
 
           {/* Stock y cantidad */}
