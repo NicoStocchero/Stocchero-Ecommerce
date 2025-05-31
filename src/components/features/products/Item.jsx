@@ -1,9 +1,11 @@
 // Item.jsx - Tarjeta de producto individual
 
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "@/hooks/useCart";
 
-const Item = ({ product }) => {
+// Aplica memo al componente para evitar re-renders innecesarios
+const Item = memo(({ product }) => {
   const { id, marca, title, precio, precioAnterior, imagen, descuento, stock } =
     product;
   const { getStockAvailable } = useCart();
@@ -59,6 +61,6 @@ const Item = ({ product }) => {
       </div>
     </Link>
   );
-};
+});
 
 export default Item;
