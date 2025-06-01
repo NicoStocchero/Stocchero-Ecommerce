@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { CartContext } from "@/context/CartContext";
+import { useCart } from "@/hooks/useCart";
 import { useMiniCart } from "@/hooks/useMiniCart";
 import CartItemList from "./CartItemList";
 import MiniCartItem from "./MiniCartItem";
@@ -8,7 +7,7 @@ import MiniCartItem from "./MiniCartItem";
 import { motion, AnimatePresence } from "framer-motion";
 
 const MiniCart = () => {
-  const { cart, totalPrice } = useContext(CartContext);
+  const { cart, totalPrice } = useCart();
   const { isVisible, closeMiniCart } = useMiniCart();
 
   return (
