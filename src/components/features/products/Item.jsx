@@ -15,6 +15,7 @@ const Item = memo(({ product }) => {
   return (
     <Link
       to={`/item/${id}`}
+      aria-label={`Ver detalles del producto ${title}`}
       className={`bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col ${
         stockAvailable === 0 ? "opacity-30" : ""
       }`}
@@ -26,6 +27,7 @@ const Item = memo(({ product }) => {
           decoding="async"
           src={imagen}
           alt={title}
+          role="img"
           className="w-full h-full object-cover"
         />
       </div>
@@ -44,7 +46,10 @@ const Item = memo(({ product }) => {
           </p>
         )}
         <div className="flex items-center gap-1">
-          <span className="text-base font-bold text-gray-900">
+          <span
+            className="text-base font-bold text-gray-900"
+            aria-label={`Precio ${precio.toLocaleString()} pesos`}
+          >
             ${precio.toLocaleString()}
           </span>
           {descuento && (

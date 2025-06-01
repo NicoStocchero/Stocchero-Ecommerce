@@ -9,7 +9,12 @@ const ProductSection = ({ title, products, linkTo }) => {
 
   return (
     <section className="max-w-7xl mx-auto py-10 px-4">
-      <h2 className="text-xl font-bold mb-4">{title}</h2>
+      <h2
+        className="text-xl font-bold mb-4"
+        id={`section-title-${title.replace(/\s+/g, "-").toLowerCase()}`}
+      >
+        {title}
+      </h2>
 
       <ItemList
         products={productsToShow}
@@ -20,6 +25,7 @@ const ProductSection = ({ title, products, linkTo }) => {
         <Link
           to={linkTo}
           className="text-primary font-semibold hover:underline"
+          aria-label={`Ver más productos de la sección ${title}`}
         >
           Ver más &rarr;
         </Link>

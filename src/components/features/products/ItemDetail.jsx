@@ -28,6 +28,7 @@ const ItemDetail = ({ product }) => {
         <img
           src={imagen}
           alt={title}
+          role="img"
           className="w-96 max-w-full rounded-xl shadow-md object-contain bg-white"
           loading="lazy"
           decoding="async"
@@ -39,7 +40,12 @@ const ItemDetail = ({ product }) => {
             {marca}
           </span>
 
-          <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
+          <h2
+            className="text-3xl font-bold text-gray-900"
+            aria-label={`Detalle del producto ${title}`}
+          >
+            {title}
+          </h2>
 
           <p className="text-base text-gray-600 leading-relaxed">
             {descripcion}
@@ -48,7 +54,10 @@ const ItemDetail = ({ product }) => {
           {/* Precios */}
           <div className="flex flex-col gap-2">
             {precioAnterior && (
-              <p className="text-sm text-gray-400 line-through">
+              <p
+                className="text-sm text-gray-400 line-through"
+                aria-label={`Precio final ${precio.toLocaleString()} pesos`}
+              >
                 ${precioAnterior.toLocaleString()}
               </p>
             )}
