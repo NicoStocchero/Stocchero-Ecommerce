@@ -17,6 +17,7 @@ import Contacto from "./pages/Contacto";
 import { Cart } from "./pages/Cart";
 import MiniCart from "./components/cart/MiniCart";
 import Checkout from "./pages/Checkout";
+import NotFound from "@/pages/NotFound";
 
 import { createFirebaseApp } from "./utils/configFirebase";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -41,14 +42,7 @@ function App() {
               <Route path="/contacto" element={<Contacto />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
-              <Route
-                path="*"
-                element={
-                  <h2 className="text-center text-2xl font-bold mt-12">
-                    404 - Página no encontrada
-                  </h2>
-                }
-              />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
 
