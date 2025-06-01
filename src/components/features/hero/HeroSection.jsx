@@ -9,6 +9,8 @@ const HeroSection = () => (
     <img
       src={heroImage}
       alt="Jugador de pádel entrenando con equipo Renace"
+      width={1200}
+      height={600}
       className="absolute inset-0 w-full h-full object-cover object-[center_8%] opacity-80"
       loading="lazy"
       decoding="async"
