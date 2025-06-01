@@ -21,7 +21,13 @@ const Item = memo(({ product }) => {
     >
       {/* Imagen */}
       <div className="aspect-[4/3] w-full overflow-hidden rounded-t-lg">
-        <img src={imagen} alt={title} className="w-full h-full object-cover" />
+        <img
+          loading="lazy"
+          decoding="async"
+          src={imagen}
+          alt={title}
+          className="w-full h-full object-cover"
+        />
       </div>
 
       {/* Info producto */}
