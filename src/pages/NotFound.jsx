@@ -7,6 +7,8 @@ const NotFound = () => {
       <img
         src={img404}
         alt="404"
+        loading="lazy"
+        decoding="async"
         className="w-48 sm:w-64 md:w-80 lg:w-96 h-auto mb-8"
       />
 

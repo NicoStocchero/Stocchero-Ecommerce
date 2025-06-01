@@ -21,6 +21,8 @@ const CartItem = ({ item }) => {
           onClick={() => navigate(`/item/${item.product.id}`)}
           src={item.product.imagen}
           alt={item.product.title}
+          loading="lazy"
+          decoding="async"
           className="w-28 h-28 object-cover rounded-md border border-neutral-200 cursor-pointer"
         />
         <div className="flex flex-col gap-2">

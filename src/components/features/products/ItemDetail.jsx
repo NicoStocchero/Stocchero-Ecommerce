@@ -30,6 +30,7 @@ const ItemDetail = ({ product }) => {
           alt={title}
           className="w-96 max-w-full rounded-xl shadow-md object-contain bg-white"
           loading="lazy"
+          decoding="async"
         />
 
         {/* Detalles */}

@@ -18,6 +18,8 @@ const MiniCartItem = ({ item }) => {
         }}
         src={item.product.imagen}
         alt={item.product.title}
+        loading="lazy"
+        decoding="async"
         className="w-16 h-16 object-cover rounded-md border cursor-pointer"
       />
 

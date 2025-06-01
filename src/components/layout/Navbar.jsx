@@ -14,7 +14,13 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur-md shadow-sm">
       {/* Logo */}
       <NavLink to="/" aria-label="Ir a la página de inicio">
-        <img src={logo} alt="Renace Padel Club" className="h-10" />
+        <img
+          src={logo}
+          loading="lazy"
+          decoding="async"
+          alt="Renace Padel Club"
+          className="h-10"
+        />
       </NavLink>
 
       {/* Links de navegación */}
