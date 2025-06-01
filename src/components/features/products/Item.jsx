@@ -27,6 +27,8 @@ const Item = memo(({ product }) => {
           decoding="async"
           src={imagen}
           alt={title}
+          width={300}
+          height={225} // 4:3 aspect ratio
           role="img"
           className="w-full h-full object-cover"
         />

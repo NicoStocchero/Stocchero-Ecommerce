@@ -12,7 +12,6 @@ const HeroSection = () => (
       width={1200}
       height={600}
       className="absolute inset-0 w-full h-full object-cover object-[center_8%] opacity-80"
-      loading="lazy"
       decoding="async"
     />
 

@@ -24,9 +24,9 @@ const Navbar = () => {
         <NavLink to="/" aria-label="Ir a la página de inicio">
           <img
             src={logo}
-            loading="lazy"
-            decoding="async"
             alt="Renace Padel Club"
+            width="150"
+            height="50"
             className="h-10"
           />
         </NavLink>
