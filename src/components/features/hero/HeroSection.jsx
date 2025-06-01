@@ -11,6 +11,7 @@ const HeroSection = () => (
       alt="Jugador de pádel entrenando con equipo Renace"
       className="absolute inset-0 w-full h-full object-cover object-[center_8%] opacity-80"
       loading="lazy"
+      decoding="async"
     />
 
     <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
