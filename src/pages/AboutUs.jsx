@@ -6,19 +6,19 @@ import { Link } from "react-router-dom";
 // Componentes internos
 import AnimatedSection from "@/animations/AnimatedSection";
 import { Button } from "@/components/ui/button";
-import Hito from "@/components/features/about/Hito";
-import MisionCard from "@/components/features/about/MisionCard";
-import ValorItem from "@/components/features/about/ValorItem";
-import TestimonioCard from "@/components/features/about/TestimonioCard";
+import Hito from "@/components/features/about/Milestone";
+import MisionCard from "@/components/features/about/MissionCard";
+import ValorItem from "@/components/features/about/ValueItem";
+import TestimonioCard from "@/components/features/about/TestimonialCard";
 
 // Datos de contenido (textos e información)
 import {
   heroText,
   historiaText,
-  misionData,
-  valoresData,
-  testimoniosData,
-  hitosData,
+  missionData,
+  valuesData,
+  testimonialsData,
+  milestonesData,
 } from "@/data/about";
 
 const Nosotros = () => {
@@ -54,7 +54,7 @@ const Nosotros = () => {
 
       {/* Misión & Visión: tarjetas con iconos y textos cortos */}
       <div className="mb-16 grid gap-6 md:grid-cols-2 text-justify">
-        {misionData.map((item, idx) => (
+        {missionData.map((item, idx) => (
           <MisionCard key={item.title} {...item} custom={idx + 2} />
         ))}
       </div>
@@ -65,7 +65,7 @@ const Nosotros = () => {
           Nuestros Valores
         </h2>
         <ul className="space-y-4">
-          {valoresData.map((val, idx) => (
+          {valuesData.map((val, idx) => (
             <ValorItem key={idx} {...val} custom={idx + 6} />
           ))}
         </ul>
@@ -73,7 +73,7 @@ const Nosotros = () => {
 
       {/* Hitos: números destacados sobre logros */}
       <div className="mb-16 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-        {hitosData.map((hito, idx) => (
+        {milestonesData.map((hito, idx) => (
           <Hito key={idx} {...hito} custom={idx + 12} />
         ))}
       </div>
@@ -84,7 +84,7 @@ const Nosotros = () => {
           Lo que dicen nuestros jugadores
         </h2>
         <div className="grid gap-6 md:grid-cols-2 text-justify">
-          {testimoniosData.map((t, idx) => (
+          {testimonialsData.map((t, idx) => (
             <TestimonioCard key={idx} {...t} custom={idx + 16} />
           ))}
         </div>

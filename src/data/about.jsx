@@ -26,7 +26,7 @@ export const historiaText = `
 `.trim();
 
 // Misión: tarjetas con icono, título y texto
-export const misionData = [
+export const missionData = [
   {
     icon: <FaTrophy />,
     title: "Excelencia Deportiva",
@@ -50,7 +50,7 @@ export const misionData = [
 ];
 
 // Valores: lista de principios del club con íconos y textos destacados
-export const valoresData = [
+export const valuesData = [
   {
     icon: <FaHandshake />,
     text: (
@@ -112,7 +112,7 @@ export const valoresData = [
 ];
 
 // Testimonios: frases de clientes + autor
-export const testimoniosData = [
+export const testimonialsData = [
   {
     quote:
       "Gracias a Renace Padel Club, mejoré mi técnica, encontré el equipamiento ideal y volví a disfrutar del pádel como nunca. La atención es increíble y siempre me ayudan a elegir lo mejor para mi nivel.",
@@ -136,7 +136,7 @@ export const testimoniosData = [
 ];
 
 // Hitos: números clave + descripción
-export const hitosData = [
+export const milestonesData = [
   { num: 500, suffix: "+", desc: "Jugadores que confían en nosotros" },
   { num: 5, suffix: " años", desc: "Impulsando el pádel en la comunidad" },
   { num: 20, suffix: "+", desc: "Torneos realizados" },
