@@ -38,9 +38,6 @@ const ItemListContainer = () => {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
         onScroll={false}
       >
-        <h1 className="text-3xl font-semibold text-center text-gray-900 mb-8">
-          Cargando productos...
-        </h1>
         <SkeletonList />
       </AnimatedSection>
     );

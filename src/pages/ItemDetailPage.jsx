@@ -8,6 +8,7 @@ import ItemDetail from "@/components/features/products/ItemDetail";
 
 // Hook personalizado
 import { useProductById } from "@/hooks/useProductById";
+import SkeletonItemDetail from "@/components/ui/SkeletonItemDetail";
 
 const ItemDetailPage = () => {
   // Obtenemos el ID del producto desde la URL (parámetro dinámico)
@@ -31,8 +32,8 @@ const ItemDetailPage = () => {
   // Render condicional: loader mientras se carga el producto
   if (loading) {
     return (
-      <div className="flex justify-center items-center py-20">
-        <div className="w-12 h-12 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <SkeletonItemDetail />
       </div>
     );
   }
