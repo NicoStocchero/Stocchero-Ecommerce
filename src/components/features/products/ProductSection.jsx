@@ -2,8 +2,9 @@
 
 import { Link } from "react-router-dom";
 import ItemList from "./ItemList";
+import SkeletonList from "@/components/ui/SkeletonList";
 
-const ProductSection = ({ title, products, linkTo }) => {
+const ProductSection = ({ title, products, linkTo, loading }) => {
   // Muestra hasta 5 productos
   const productsToShow = products.slice(0, 5);
 
@@ -16,10 +17,14 @@ const ProductSection = ({ title, products, linkTo }) => {
         {title}
       </h2>
 
-      <ItemList
-        products={productsToShow}
-        className="grid-cols-2 sm:grid-cols-3 md:grid-cols-4"
-      />
+      {loading ? (
+        <SkeletonList count={5} />
+      ) : (
+        <ItemList
+          products={productsToShow}
+          className="grid-cols-2 sm:grid-cols-3 md:grid-cols-4"
+        />
+      )}
 
       <div className="text-right mt-4">
         <Link
@@ -28,7 +33,8 @@ const ProductSection = ({ title, products, linkTo }) => {
           aria-label={`Ver más productos de la sección ${title}`}
         >
           Ver más &rarr;
-        </Link>
+        </Link>{" "}
+        //Ver más →
       </div>
     </section>
   );
