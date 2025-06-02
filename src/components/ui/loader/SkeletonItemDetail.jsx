@@ -55,7 +55,7 @@ const SkeletonItemDetail = () => {
           </div>
 
           {/* Botones cantidad */}
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center justify-center">
             <div className="h-8 w-8 bg-gray-200 rounded relative overflow-hidden">
               <SkeletonShimmer className="absolute inset-0" />
             </div>
