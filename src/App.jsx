@@ -10,7 +10,6 @@ import Footer from "./components/layout/Footer";
 import ScrollToTop from "./components/layout/SrollToTop";
 
 import Home from "./pages/Home";
-import Productos from "./pages/Productos";
 import ItemDetailPage from "./pages/ItemDetailPage";
 import Nosotros from "./pages/Nosotros";
 import Contacto from "./pages/Contacto";
@@ -21,6 +20,7 @@ import NotFound from "@/pages/NotFound";
 
 import { createFirebaseApp } from "./utils/configFirebase";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import ItemListContainer from "./pages/ItemListContainer";
 
 function App() {
   createFirebaseApp();
@@ -36,7 +36,10 @@ function App() {
             <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/category/:categoryId" element={<Productos />} />
+              <Route
+                path="/category/:categoryId"
+                element={<ItemListContainer />}
+              />
               <Route path="/item/:itemId" element={<ItemDetailPage />} />
               <Route path="/nosotros" element={<Nosotros />} />
               <Route path="/contacto" element={<Contacto />} />
