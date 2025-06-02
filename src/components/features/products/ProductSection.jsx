@@ -1,13 +1,12 @@
 // ProductSection.jsx - Sección con título, lista corta de productos y link a ver más
 
 import { Link } from "react-router-dom";
-import ItemList from "./ItemList";
+import Item from "./Item";
 import SkeletonList from "@/components/ui/loader/SkeletonList";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const ProductSection = ({ title, products, linkTo, loading }) => {
-  // Muestra hasta 5 productos
-  const productsToShow = products.slice(0, 5);
-
   return (
     <section className="max-w-7xl mx-auto py-10 px-4">
       <h2
@@ -20,10 +19,23 @@ const ProductSection = ({ title, products, linkTo, loading }) => {
       {loading ? (
         <SkeletonList count={5} />
       ) : (
-        <ItemList
-          products={productsToShow}
-          className="grid-cols-2 sm:grid-cols-3 md:grid-cols-4"
-        />
+        <Swiper
+          spaceBetween={16}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 5 },
+          }}
+          loop={true}
+          autoplay={{ delay: 3000 }}
+        >
+          {products.map((product) => (
+            <SwiperSlide key={product.id}>
+              <Item product={product} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       )}
 
       <div className="text-right mt-4">
@@ -32,9 +44,8 @@ const ProductSection = ({ title, products, linkTo, loading }) => {
           className="text-primary font-semibold hover:underline"
           aria-label={`Ver más productos de la sección ${title}`}
         >
-          Ver más &rarr;
+          Ver más →
         </Link>{" "}
-        //Ver más →
       </div>
     </section>
   );
