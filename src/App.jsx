@@ -11,8 +11,8 @@ import ScrollToTop from "./components/layout/SrollToTop";
 
 import Home from "./pages/Home";
 import ItemDetailPage from "./pages/ItemDetailPage";
-import Nosotros from "./pages/Nosotros";
-import Contacto from "./pages/Contacto";
+import Nosotros from "./pages/AboutUs";
+import Contacto from "./pages/Contact";
 import { Cart } from "./pages/Cart";
 import MiniCart from "./components/cart/MiniCart";
 import Checkout from "./pages/Checkout";
