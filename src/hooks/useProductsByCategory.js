@@ -8,10 +8,13 @@ import { getProducts } from "@/utils/getProducts";
 export const useProductsByCategory = (categories = []) => {
   // Estado principal: productos organizados por categoría (ej: { paletas: [...], accesorios: [...] })
   const [products, setProducts] = useState({});
+  const [loading, setLoading] = useState(true); // Estado de carga inicial
 
   useEffect(() => {
     // Efecto: carga los productos al montar o cambiar el array de categorías
     const fetchProducts = async () => {
+      setLoading(true); // Activamos el estado de carga
+
       const results = {}; // Objeto para almacenar productos por categoría
 
       // Cargamos los productos uno a uno por categoría
@@ -22,11 +25,13 @@ export const useProductsByCategory = (categories = []) => {
 
       // Actualizamos el estado con los productos organizados
       setProducts(results);
+
+      setLoading(false); // Desactivamos el estado de carga
     };
 
     fetchProducts();
   }, [categories]); // Dependencia: se ejecuta cuando cambian las categorías
 
   // Retornamos los productos organizados por categoría
-  return products;
+  return { products, loading };
 };
