@@ -61,6 +61,17 @@ export default {
       spacing: {
         container: "1.5rem", // Útil para usar como padding horizontal base
       },
+
+      animation: {
+        shimmer: "shimmer 2s linear infinite", // Animación de shimmer para loaders y skeletons
+      },
+
+      keyframes: {
+        shimmer: {
+          "0%": { transform: "translateX(-200%)" },
+          "100%": { transform: "translateX(200%)" },
+        },
+      },
     },
   },
 
