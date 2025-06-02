@@ -2,7 +2,7 @@
 
 import { Link } from "react-router-dom";
 import ItemList from "./ItemList";
-import SkeletonList from "@/components/ui/SkeletonList";
+import SkeletonList from "@/components/ui/loader/SkeletonList";
 
 const ProductSection = ({ title, products, linkTo, loading }) => {
   // Muestra hasta 5 productos

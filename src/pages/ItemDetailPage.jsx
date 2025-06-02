@@ -8,7 +8,7 @@ import ItemDetail from "@/components/features/products/ItemDetail";
 
 // Hook personalizado
 import { useProductById } from "@/hooks/useProductById";
-import SkeletonItemDetail from "@/components/ui/SkeletonItemDetail";
+import SkeletonItemDetail from "@/components/ui/loader/SkeletonItemDetail";
 
 const ItemDetailPage = () => {
   // Obtenemos el ID del producto desde la URL (parámetro dinámico)

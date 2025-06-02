@@ -9,7 +9,7 @@ import { useProducts } from "@/hooks/useProducts";
 // Utils y componentes
 import ItemList from "../components/features/products/ItemList";
 import AnimatedSection from "@/animations/AnimatedSection";
-import SkeletonList from "@/components/ui/SkeletonList";
+import SkeletonList from "@/components/ui/loader/SkeletonList";
 import CategoryFilters from "@/components/ui/CategoryFilters";
 import { categories } from "@/data/categories";
 
