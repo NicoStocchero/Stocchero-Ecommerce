@@ -2,20 +2,13 @@ import { Link } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/imagen-main.webp";
+import HeroCarousel from "./HeroCarousel";
 
 const HeroSection = () => (
   <section className="relative h-[80vh] w-full bg-black overflow-hidden">
-    <img
-      src={heroImage}
-      alt="Jugador de pádel entrenando con equipo Renace"
-      width={1200}
-      height={600}
-      className="absolute inset-0 w-full h-full object-cover object-[center_8%] opacity-80"
-      decoding="async"
-    />
+    <HeroCarousel />
 
-    <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+    <div className="absolute inset-0 z-10 flex flex-col items-center justify-center h-full text-center px-4 pointer-events-none">
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -42,7 +35,7 @@ const HeroSection = () => (
         <Link to="/category/all">
           <Button
             size="lg"
-            className="rounded-full px-8 py-4 text-lg font-semibold shadow-md hover:shadow-lg transition"
+            className="rounded-full px-8 py-4 text-lg font-semibold shadow-md hover:shadow-lg transition pointer-events-auto"
           >
             Ver Catálogo
           </Button>
