@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 // Hooks personalizados
 import { useProductsByCategory } from "@/hooks/useProductsByCategory";
 
@@ -7,11 +9,11 @@ import HeroSection from "@/components/features/hero/HeroSection";
 
 const Home = () => {
   // Usamos el hook para obtener productos
-  const products = useProductsByCategory([
-    "paletas",
-    "indumentaria",
-    "accesorios",
-  ]);
+  const categories = useMemo(
+    () => ["paletas", "indumentaria", "accesorios"],
+    []
+  );
+  const { products, loading } = useProductsByCategory(categories);
 
   return (
     <main>
@@ -22,16 +24,19 @@ const Home = () => {
       <ProductSection
         title="Paletas Destacadas"
         products={products.paletas || []}
+        loading={loading}
         linkTo="/category/paletas"
       />
       <ProductSection
         title="Remeras Nuevas"
         products={products.indumentaria || []}
+        loading={loading}
         linkTo="/category/indumentaria"
       />
       <ProductSection
         title="Accesorios Especiales"
         products={products.accesorios || []}
+        loading={loading}
         linkTo="/category/accesorios"
       />
     </main>
